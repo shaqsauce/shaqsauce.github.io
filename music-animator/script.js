@@ -89,18 +89,19 @@ document.getElementById('playButton').addEventListener('click', (clickEvent) => 
     spotifyApi.searchTracks("cyanide", {limit: 1})
       .then((results) => {
         // TO TEACH:
-        // let track = results.tracks.items[0];
-        // let previewUrl = track.preview_url;
+         let track = results.tracks.items[0];
+         let previewUrl = track.preview_url;
 
         if (previewUrl) {
           // Sets the HTML audio element source to the music.
           audioEl.src = previewUrl;
 
           requestAudio(previewUrl, (audio) => {
-            // TODO(you): Use analyzeAudio to apply frequency analysis. 
+            // TO TEACH:
+            const analyzedAudio = analyzeAudio(audio);
 
-            // TODO(you): Create an instance of MyVisualizer using the
-            // analyzed audio.
+            // TO TEACH:
+            const visualizer = new MyVisualizer(analyzedAudio);
 
             audioEl.play();
             
