@@ -2,10 +2,7 @@ class MyVisualizer extends AbstractVisualizer {
     constructor(analyzedAudio) {
       super();
       this.peaks = analyzedAudio.peaks;
-    }
-
-    startVisual() {
-      this.updateVisual(/* peakIndex */ 0);
+      this.start();
     }
 
     /**
@@ -16,30 +13,25 @@ class MyVisualizer extends AbstractVisualizer {
      * 2) Add the requestAnimationFrame loop which recursively calls
      * itself ("updateVisual") to repeatedly update the visual.
      */
-    updateVisual(peakIndex) {
-      const audioEl = document.querySelector('#audio');
+    updateVisual(index) {
+      index = index || 0;
 
-      // If we pass an index greater than the # peaks, 
-      if (peakIndex >= this.peaks.length) {
+      if (index >= this.peaks.length) {
           return;
       }
-      
-      // TODO(you): "If"-statement here.
-      // 1) Inspect the audioEl for time-related properties.
-      // 2) Access the peak at peakIndex from the peaks array.
-      // 3) Compare the time properties to peak properties (part 1 and 2 above):
-      //    -- If the audio's current time is greater or equal to the time of
-      //    the peak, draw visualizations (drawShapes).
-      if (true) {
 
-        // Update the frame.
+      const audioEl = document.querySelector('#audio');
+
+      if ((audioEl.currentTime * 1000) - this.peaks[index].timeOfPeak > 0) {
+
+        this.drawShapes();
+
         requestAnimationFrame(() => {
-          this.updateVisual(peakIndex + 1)
+          this.updateVisual(index + 1)
         });
       } else {
-        // Otherwise, render the current (existing) visualization)
         requestAnimationFrame(() => {
-          this.updateVisual(peakIndex)
+          this.updateVisual(index)
         });
       }
     }
@@ -48,7 +40,26 @@ class MyVisualizer extends AbstractVisualizer {
      * TODO(you): Draw the shapes you'd expect to see in your visual.
      */
     drawShapes() {
-        // Look at AbstractVisualizer class for functions.
+        const point = {
+          x: generateRandomValue(300, 700),
+          y: generateRandomValue(100, 500),
+        };
+        const point2 = {
+          x: generateRandomValue(300, 700),
+          y: generateRandomValue(100, 500),
+        };
+        const radius =  generateRandomValue(5, 25);
+        const color = generateRandomColor();
+        const width = generateRandomValue(1, 2);
+        const i =  generateRandomValue(5, 25);
+        const startAngle =  generateRandomValue(0, Math.PI);
+        const endAngle =  generateRandomValue(0, Math.PI);
+
+        this.drawCircle(point, radius, {});
+        //this.drawSemiCircle(point, radius, startAngle, endAngle, 10, color);
+        //this.drawLine(point, point2, {});
+        //this.drawSpiral(i, point, color)
+        //this.drawSquigglyLine(point, i, {});
     }
 }
 
