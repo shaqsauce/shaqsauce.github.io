@@ -157,17 +157,6 @@ class AbstractVisualizer {
     context.fillRect(0, 0, canvasDimensions.width, canvasDimensions.height);
   }
 
-  drawLine(startPoint, endPoint, lineProperties) {
-    const canvas = this.canvas;
-    const context = canvas.getContext("2d");
-    context.beginPath();
-    context.moveTo(startPoint.x, startPoint.y);
-    context.lineTo(endPoint.x, endPoint.y);
-    context.lineWidth = lineProperties.width || WIDTH;
-    context.strokeStyle = lineProperties.color || COLOR;
-    context.stroke();
-  }
-
   drawSemiCircle(startPoint, radius, startAngle, endAngle, width, color) {
     const canvas = this.canvas;
     const context = canvas.getContext("2d");
@@ -190,18 +179,6 @@ class AbstractVisualizer {
       width: circleProperties.width,
     }
     this.shapeArr.push(shapeObj);
-  }
-
-  drawCircle(centerPoint, radius, circleProperties) {
-      const color = circleProperties.color || COLOR;
-      const context = canvas.getContext("2d");
-      context.fillStyle = color;
-      context.beginPath();
-      context.arc(centerPoint.x, centerPoint.y, radius, 0, 2 * Math.PI);
-      context.fill();
-      context.lineWidth = circleProperties.width || WIDTH;
-      context.strokeStyle = color;
-      context.stroke();
   }
 
   drawSquigglyLine(startPoint, radius, lineProperties) {
