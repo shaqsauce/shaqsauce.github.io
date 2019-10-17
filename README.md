@@ -6,7 +6,7 @@
     ![fork screenshot](fork.png)
 3.  Go to settings in your new repository and Cchange the name to match your username.
     ![Settings screenshot](settings.png)
-    ![Name screenshot](name.png)
+    ![Name screenshot](rename.png)
 4.  Visit your new website at http://[Insert you username].github.io if you load a
     website then it worked!
 
