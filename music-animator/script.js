@@ -1,9 +1,9 @@
 class MyVisualizer extends AbstractVisualizer {
-    constructor(analyzedAudio) {
-      super();
-      this.peaks = analyzedAudio.peaks;
-      this.start();
-    }
+  constructor(analyzedAudio) {
+    super();
+    this.peaks = analyzedAudio.peaks;
+    this.start();
+  }
     
   drawLine(startPoint, endPoint, lineProperties) {
       // TEACH:
@@ -17,19 +17,6 @@ class MyVisualizer extends AbstractVisualizer {
     context.stroke();
   }
 
-
-      drawCircle(centerPoint, radius, circleProperties) {
-          // TEACH:
-          const color = circleProperties.color || COLOR;
-          const context = canvas.getContext("2d");
-          context.fillStyle = color;
-          context.beginPath();
-          context.arc(centerPoint.x, centerPoint.y, radius, 0, 2 * Math.PI);
-          context.fill();
-          context.lineWidth = circleProperties.width || WIDTH;
-          context.strokeStyle = color;
-          context.stroke();
-      }
 
     /**
      * TODO(you): 
@@ -66,23 +53,28 @@ class MyVisualizer extends AbstractVisualizer {
      * TODO(you): Draw the shapes you'd expect to see in your visual.
      */
     drawShapes() {
-        const point = {
-          x: generateRandomValue(300, 700),
-          y: generateRandomValue(100, 500),
-        };
-        const point2 = {
-          x: generateRandomValue(300, 700),
-          y: generateRandomValue(100, 500),
-        };
-        const radius =  generateRandomValue(5, 25);
-        const color = generateRandomColor();
-        const width = generateRandomValue(1, 2);
-        const i =  generateRandomValue(5, 25);
-        const startAngle =  generateRandomValue(0, Math.PI);
-        const endAngle =  generateRandomValue(0, Math.PI);
+      const point1 = {
+        x: 100,
+        y: 200,
+      };
+      const point2 = {
+        x: 400,
+        y: 200,
+      };
+      const point3 = {
+        x: 400,
+        y: 400,
+      };
+      const point4 = {
+        x: 100,
+        y: 400,
+      };
+      const color = generateRandomColor();
+      const width = generateRandomValue(1, 2);
 
-        this.drawCircle(point, radius, {});
-        this.drawLine(point, point2, {});
+      this.drawRectangle(point1, point2, point3, point4, {color, width});
+
+      // TO TEACH: Add your other shapes here
     }
 }
 
