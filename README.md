@@ -61,4 +61,4 @@ press enter.
 *  `pwd` - Prints out the full file path that you're currently in.
 
 # Excercies
-* [Week 3](/excercies/week3.md)
+* [Week 3](exercises/week3.md)
