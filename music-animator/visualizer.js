@@ -32,17 +32,13 @@ class AbstractVisualizer {
   }
 
   drawSquare() {
-    // TODO(you): Implement.
+    // TODO(week 3): Implement.
   }
 
   drawCircle() {
-    // TODO(you): Implement.
+    // TODO(week 3): Implement.
     // See here for more information:
     // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc
-  }
-
-  drawStar(point1, point2, point3, point4, point5, starProperties) {
-    // TODO(you): Implement (there are many ways to do this ...)
   }
 
   drawBackground(canvas, canvasDimensions, color = BACKGROUND_COLOR) {
