@@ -37,14 +37,20 @@ git push
 
 *If your forget to add `-m "Insert your message"` you'll get put into a program called VIM. In order to leave VIM, type `:q` and press enter.*
 
+## Adding remote branch
+1.  Commit all your local changes by following the instruction in *Saving changes to GitHub* above
+2.  `git remote add upstream https://github.com/jamieyu96/jamieyu96.github.io.git`
+3.  `git fetch upstream`
+4.  `git merge upstreatm/master`
+
 ## git commands
 All git commands must be done from inside of your project folder
 
-* `git add .` - Adds current changes to git.
-* `git commit -m "instert your own message her"` - Makes a new git commit .
-* `git push` - Pushes your commit to GitHub
-* `git pull` - Pulls changes from GitHub to your project
-* `git status` - Prints out the current status of your git project
+1. `git add .` - Adds current changes to git.
+2. `git commit -m "instert your own message her"` - Makes a new git commit .
+3. `git push` - Pushes your commit to GitHub
+4. `git pull` - Pulls changes from GitHub to your project
+5. `git status` - Prints out the current status of your git project
 
 ## I typed `git commit` and I for got to add a message
 You're now in a program called ***VIM*** Do not panic. Simply type `:q` and
