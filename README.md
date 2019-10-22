@@ -59,3 +59,6 @@ press enter.
 *  `cd` - *cd* without an argument takes you to your home folder.
 *  `ls` - List the contents of your current folder.
 *  `pwd` - Prints out the full file path that you're currently in.
+
+# Excercies
+* [Week 3](exercises/week3.md)
