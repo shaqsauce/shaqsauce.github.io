@@ -1,12 +1,22 @@
 class MyVisualizer extends AbstractVisualizer {
-    constructor(analyzedAudio) {
-      super();
-      this.peaks = analyzedAudio.peaks;
-    }
+  constructor(analyzedAudio) {
+    super();
+    this.peaks = analyzedAudio.peaks;
+    this.start();
+  }
+    
+  drawLine(startPoint, endPoint, lineProperties) {
+      // TEACH:
+    const canvas = this.canvas;
+    const context = canvas.getContext("2d");
+    context.beginPath();
+    context.moveTo(startPoint.x, startPoint.y);
+    context.lineTo(endPoint.x, endPoint.y);
+    context.lineWidth = lineProperties.width || WIDTH;
+    context.strokeStyle = lineProperties.color || COLOR;
+    context.stroke();
+  }
 
-    startVisual() {
-      this.updateVisual(/* peakIndex */ 0);
-    }
 
     /**
      * TODO(you): 
@@ -16,31 +26,25 @@ class MyVisualizer extends AbstractVisualizer {
      * 2) Add the requestAnimationFrame loop which recursively calls
      * itself ("updateVisual") to repeatedly update the visual.
      */
-    updateVisual(peakIndex) {
-      const audioEl = document.querySelector('#audio');
+    updateVisual(index) {
+      index = index || 0;
 
-      // If we pass an index greater than the # peaks, 
-      if (peakIndex >= this.peaks.length) {
+      if (index >= this.peaks.length) {
           return;
       }
-      
-      // TODO(you): "If"-statement here.
-      // 1) Inspect the audioEl for time-related properties.
-      // 2) Access the peak at peakIndex from the peaks array.
-      // 3) Compare the time properties to peak properties (part 1 and 2 above):
-      //    -- If the audio's current time is greater or equal to the time of
-      //    the peak, draw visualizations (drawShapes).
-      if (//TODO(you): Logic statement from step 3) here
-      ) {
 
-        // Update the frame.
+      const audioEl = document.querySelector('#audio');
+
+      if ((audioEl.currentTime) - this.peaks[index].timeOfPeak > 0) {
+
+        this.drawShapes();
+
         requestAnimationFrame(() => {
-          this.updateVisual(peakIndex + 1)
+          this.updateVisual(index + 1)
         });
       } else {
-        // Otherwise, render the current (existing) visualization)
         requestAnimationFrame(() => {
-          this.updateVisual(peakIndex)
+          this.updateVisual(index)
         });
       }
     }
@@ -49,7 +53,28 @@ class MyVisualizer extends AbstractVisualizer {
      * TODO(you): Draw the shapes you'd expect to see in your visual.
      */
     drawShapes() {
-        // Look at AbstractVisualizer class for functions.
+      const point1 = {
+        x: 100,
+        y: 200,
+      };
+      const point2 = {
+        x: 400,
+        y: 200,
+      };
+      const point3 = {
+        x: 400,
+        y: 400,
+      };
+      const point4 = {
+        x: 100,
+        y: 400,
+      };
+      const color = generateRandomColor();
+      const width = generateRandomValue(1, 2);
+
+      this.drawRectangle(point1, point2, point3, point4, {color, width});
+
+      // TO TEACH: Add your other shapes here
     }
 }
 
@@ -76,26 +101,31 @@ document.getElementById('playButton').addEventListener('click', (clickEvent) => 
   if(!audioEl.src) {
     // TODO(you): Use the spotifyApi to searchTracks for your input. Documentation can be found at:
     // https://doxdox.org/jmperez/spotify-web-api-js#src-spotify-web-api.js-constr.prototype.searchtracks
-    spotifyApi.searchTracks(// Add parameters here) 
+    spotifyApi.searchTracks("cyanide", {limit: 1})
       .then((results) => {
-          // TODO(you): Access track from results to find a previewUrl.
+        // TO TEACH: Access track from results to find a previewUrl.
+        let track = results.tracks.items[0];
+        let previewUrl = track.preview_url;
+
         if (previewUrl) {
           // Sets the HTML audio element source to the music.
           audioEl.src = previewUrl;
 
           requestAudio(previewUrl, (audio) => {
-            // TODO(you): Use analyzeAudio to apply frequency analysis. 
+            // TO TEACH: Use analyzeAudio to apply frequency analysis.
+            const analyzedAudio = analyzeAudio(audio);
 
-            // TODO(you): Create an instance of MyVisualizer using the
-            // analyzed audio.
+            // TO TEACH: Create an instance of MyVisualizer using the
+            //           analyzed audio.
+            const visualizer = new MyVisualizer(analyzedAudio);
 
             audioEl.play();
             
-            // Use MyVisualizer's startVisual to start visualization.
-            visualizer.startVisual();
+            // Use MyVisualizer's updateVisual to start visualization.
+            visualizer.updateVisual();
           });
         } else {
-          console.warn('This song does not have a preview');
+          alert('This song does not have a preview');
           document.getElementById('playCircle').setAttribute("class", "");
         }
       })
