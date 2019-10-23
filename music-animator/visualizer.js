@@ -31,7 +31,14 @@ class AbstractVisualizer {
     context.stroke();
   }
 
-  drawSquare() {
+  drawSquare(startingPoint, sideLength, squareProperties) {
+    const context = this.canvas.getContext("2d");
+    context.moveTo(point1.x, point1.y);
+    context.beginPath();
+    context.lineTo(startingPoint.x+sideLength, startingPoint.y);
+    context.lineTo(startingPoint.x+sideLength, startingPoint.y+sideLength);
+    context.lineTo(startingPoint.x, startingPoint.y+sidelength);
+    
     // TODO(week 3): Implement.
   }
 
