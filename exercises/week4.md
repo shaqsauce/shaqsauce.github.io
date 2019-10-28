@@ -59,7 +59,7 @@ this method so that it returns a random point on the XY grid.
 
 ### Step 2: `drawShpaes`
 
-Use the 3 helper functions, `generateRandomValue`, `generateRandomClor`, and `generateRandomPoint`
+Use the 3 helper functions, `generateRandomValue`, `generateRandomColor`, and `generateRandomPoint`
 to call `drawSquare` and `drawCircle` with random values.
 
 
