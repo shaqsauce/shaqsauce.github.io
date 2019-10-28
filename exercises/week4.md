@@ -54,7 +54,9 @@ generated values. To create random values there are three methods you'll need:
 ###  Step 1: `generateRandomPoint`
 
 Right now `generateRandomPoint` only returns (0, 0). You'll need to create implement
-this method so that it returns a random point on the XY grid.
+this method so that it returns a random point on the XY grid. The return type should
+be an Object that has the keys, x and y, and values equal to the output of 
+generateRandomValue().
 
 
 ### Step 2: `drawShapes`
