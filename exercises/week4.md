@@ -51,13 +51,13 @@ generated values. To create random values there are three methods you'll need:
 *  `generateRandomPoint()`
 
 
-###  Step 1: `generateRandomPont`
+###  Step 1: `generateRandomPoint`
 
 Right now `generateRandomPoint` only returns (0, 0). You'll need to create implement
 this method so that it returns a random point on the XY grid.
 
 
-### Step 2: `drawShpaes`
+### Step 2: `drawShapes`
 
 Use the 3 helper functions, `generateRandomValue`, `generateRandomColor`, and `generateRandomPoint`
 to call `drawSquare` and `drawCircle` with random values.
