@@ -29,12 +29,12 @@ method.
 *Task:* In [visualizer.js](/music-animator/visualizer.js) implement the `drawCircle`
 method. 
 
-HINT: [Docs on drawing an arc](https://www.w3schools.com/tags/canvas_arc.asp)
-
 #### Requirements:
 
 
 *  `drawCircle` should take 3 parameters a point, radius, and a color.
+
+HINT: [Docs on drawing an arc](https://www.w3schools.com/tags/canvas_arc.asp)
 
 ### Challenge exercise: `drawStar`
 
