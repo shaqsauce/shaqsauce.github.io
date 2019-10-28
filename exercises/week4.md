@@ -2,7 +2,7 @@
 
 ## Exercise 1: Implement draw methods
 
-For the first exercise we're going to try and draw shapes one the page.
+For the first exercise we're going to try and draw shapes on the page.
 Eventually we'll use these shapes in the Spotify visualizer. To test this code
 we'll need to instantiate an instance of visualizer. We can do that by adding
 this block to the bottom of the file:
