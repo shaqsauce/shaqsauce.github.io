@@ -51,26 +51,30 @@ class AbstractVisualizer {
 }
 
 
+/**
+ * Generates a hexadecimal random color.
+ */
 function generateRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-          color += letters[Math.floor(Math.random() * 16)];
-        }
-  return color;
+  const color = generateRandomValue(0x0, 0xFFFFFF);
+  return '#' + color.toString(16);
 }
 
-// Generates a random value between [min, max] (inclusive).
+/**
+ * Generates a random value between [min, max] (inclusive).
+ */
 function generateRandomValue(minValue = 1, maxValue = 10) {
   min = Math.ceil(minValue);
   max = Math.floor(maxValue);
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-  // Generates a random set of points (x, y) for a certain range [min, max] (inclusive)
-function generateRandomPoint(range) {
+function generateRandomPoint() {
+  // TODO:
+  // Use generateRandomValue to create a ranom x and a random y value.
+  // HINT: we can use the constants CANVAS_HEIGHT and CANVAS_WIDTH for the max
+  //     x and y values.
   return {
-    x: generateRandomValue(range.min, range.max),
-    y: generateRandomValue(range.min, range.max),
+    x: 0,
+    y: 0,
   };
 }
