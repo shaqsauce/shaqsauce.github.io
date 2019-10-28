@@ -29,6 +29,8 @@ method.
 *Task:* In [visualizer.js](/music-animator/visualizer.js) implement the `drawCircle`
 method. 
 
+HINT: [Docs on drawing an arc](https://www.w3schools.com/tags/canvas_arc.asp)
+
 #### Requirements:
 
 
