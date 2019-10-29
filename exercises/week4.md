@@ -9,7 +9,7 @@ this block to the bottom of the file:
 
 ```js
 let visualizer = new MyVisualizer();
-visualizer.drawRectangle(); 
+visualizer.drawRectangle({x: 100, y:100}, {x:200, y:100}, {x:200, y:200}, {x:100, y:200}); 
 // visuzlizer.<method name>(<param1>, <param2>, ..., <param3>);
 ```
 
