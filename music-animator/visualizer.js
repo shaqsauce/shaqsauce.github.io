@@ -16,19 +16,18 @@ class AbstractVisualizer {
     this.drawBackground(this.canvas, {width: CANVAS_WIDTH, height: CANVAS_HEIGHT});
   }
 
-  drawRectangle(point1, point2, point3, point4, rectangleProperties) {
+  drawRectangle(point1, point2, point3, point4, rectangleProperties = {}) {
     const context = this.canvas.getContext("2d");
-    context.fillStyle = rectangleProperties.color;
+    context.lineWidth = rectangleProperties.width || 5;
+    context.strokeStyle = rectangleProperties.color || '#FF00000';
+
     context.moveTo(point1.x, point1.y);
-    context.beginPath();
     context.lineTo(point2.x, point2.y);
     context.lineTo(point3.x, point3.y);
     context.lineTo(point4.x, point4.y);
     context.lineTo(point1.x, point1.y);
+    context.closePath();
     context.fill();
-    context.lineWidth = rectableProperties.width;
-    context.strokeStyle = rectangleProperties.color;
-    context.stroke();
   }
 
   drawSquare() {
