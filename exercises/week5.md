@@ -22,8 +22,9 @@ into `requestAudio`. We want to start animations when the music starts playing.
 In [script.js](/music-animator/script.js) MyVisualizer class has a method called
 `updateVisual` which changes **when the visuals should be drawn**.
 *  In `updateVisual`, we'll want to call our `drawShapes` function **when the
-    audioEl's `currentTime` is greater or equal to the peak's `timeOfPeak` (see
+    audioEl's `currentTime` *is greater or equal to* the peak's `timeOfPeak` (see
     NOTE below for more details)
+*  Create this logic using an `if`-statement
 
 Using this information you should be able to animate your shapes to
 the beat of the music. This is meant to be a challenge so if you found this confusing...
