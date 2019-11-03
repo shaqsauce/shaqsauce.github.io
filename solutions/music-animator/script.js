@@ -38,10 +38,7 @@ class MyVisualizer extends AbstractVisualizer {
 
     const audioEl = document.querySelector('#audio');
 
-    if ((audioEl.currentTime) > this.peaks[index].timeOfPeak ) {
-
-      this.drawShapes();
-
+    if (true) {
       requestAnimationFrame(() => {
         this.updateVisual(index + 1)
       });
@@ -53,17 +50,6 @@ class MyVisualizer extends AbstractVisualizer {
   }
 
   drawShapes() {
-    if(Math.random() * 2 > 1) {
-      this.drawSquare(
-        generateRandomPoint(),
-        generateRandomValue(0, 100),
-        generateRandomColor());
-    } else {
-      this.drawCircle(
-        generateRandomPoint(),
-        generateRandomValue(0, 100),
-        generateRandomColor());
-    }
   }
 }
 
@@ -101,17 +87,7 @@ document.getElementById('playButton').addEventListener('click', (clickEvent) => 
           audioEl.src = previewUrl;
 
           requestAudio(previewUrl, (audio) => {
-            // TO TEACH: Use analyzeAudio to apply frequency analysis.
             const analyzedAudio = analyzeAudio(audio);
-
-            // TO TEACH: Create an instance of MyVisualizer using the
-            //           analyzed audio.
-            const visualizer = new MyVisualizer(analyzedAudio);
-
-            audioEl.play();
-            
-            // Use MyVisualizer's updateVisual to start visualization.
-            visualizer.updateVisual();
           });
         } else {
           alert('This song does not have a preview');
