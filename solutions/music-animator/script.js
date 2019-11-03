@@ -17,63 +17,54 @@ class MyVisualizer extends AbstractVisualizer {
     context.stroke();
   }
 
+  startVisual() {
+    this.updateVisual(0);
+  }
 
-    /**
-     * TODO(you): 
-     * 1) Call drawShapes() to re-draw the visual at the current time index.
-     *    -- If you want to "conditionally" draw (ex. only draw at a certain
-     *    BEAT in the song), what do you need to add?
-     * 2) Add the requestAnimationFrame loop which recursively calls
-     * itself ("updateVisual") to repeatedly update the visual.
-     */
-    updateVisual(index) {
-      index = index || 0;
+  /**
+   * TODO(you): 
+   * 1) Call drawShapes() to re-draw the visual at the current time index.
+   *    -- If you want to "conditionally" draw (ex. only draw at a certain
+   *    BEAT in the song), what do you need to add?
+   * 2) Add the requestAnimationFrame loop which recursively calls
+   * itself ("updateVisual") to repeatedly update the visual.
+   */
+  updateVisual(index) {
+    index = index || 0;
 
-      if (index >= this.peaks.length) {
-          return;
-      }
-
-      const audioEl = document.querySelector('#audio');
-
-      if ((audioEl.currentTime) > this.peaks[index].timeOfPeak ) {
-
-        this.drawShapes();
-
-        requestAnimationFrame(() => {
-          this.updateVisual(index + 1)
-        });
-      } else {
-        requestAnimationFrame(() => {
-          this.updateVisual(index)
-        });
-      }
+    if (index >= this.peaks.length) {
+        return;
     }
 
-    /**
-     * TODO(you): Draw the shapes you'd expect to see in your visual.
-     */
-    drawShapes() {
-      const point1 = {
-        x: 100,
-        y: 200,
-      };
-      const point2 = {
-        x: 400,
-        y: 200,
-      };
-      const point3 = {
-        x: 400,
-        y: 400,
-      };
-      const point4 = {
-        x: 100,
-        y: 400,
-      };
-      const color = generateRandomColor();
-      const width = generateRandomValue(1, 2);
+    const audioEl = document.querySelector('#audio');
 
-      this.drawRectangle(point1, point2, point3, point4, {color, width});
+    if ((audioEl.currentTime) > this.peaks[index].timeOfPeak ) {
+
+      this.drawShapes();
+
+      requestAnimationFrame(() => {
+        this.updateVisual(index + 1)
+      });
+    } else {
+      requestAnimationFrame(() => {
+        this.updateVisual(index)
+      });
     }
+  }
+
+  drawShapes() {
+    if(Math.random() * 2 > 1) {
+      this.drawSquare(
+        generateRandomPoint(),
+        generateRandomValue(0, 100),
+        generateRandomColor());
+    } else {
+      this.drawCircle(
+        generateRandomPoint(),
+        generateRandomValue(0, 100),
+        generateRandomColor());
+    }
+  }
 }
 
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
