@@ -52,7 +52,7 @@ class AbstractVisualizer {
       point2,
       point3,
       point4,
-      {color: generateRandomColor()})
+      {color: color})
   }
 
   drawCircle(centerPoint, radius, color) {
