@@ -93,7 +93,7 @@ function generateRandomValue(minValue = 1, maxValue = 10) {
 
 function generateRandomPoint() {
   return {
-    x: 0,
-    y: 0,
+    x: generateRandomValue(0, CANVAS_WIDTH),
+    y: generateRandomValue(0, CANVAS_HEIGHT),
   };
 }

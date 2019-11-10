@@ -5,7 +5,7 @@
 Your group should be assigned to a particular class. As a team, follow the
 instructions below for the class you're assigned to.
 
-### GameOfLife (demo'ed as a class)
+### GameOfLife [demo](https://bitstorm.org/gameoflife/)
 The `GameOfLife` class constructor takes in **no input parameters** and has no
 construction logic (the constructor should be empty).
 
