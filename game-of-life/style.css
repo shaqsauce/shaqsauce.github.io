@@ -4,21 +4,27 @@ body {
 	width: 846px;
 	margin: 0 auto;
 }
+
 td, th {
 	vertical-align: top;
 }
+
 td.middle {
 	vertical-align: middle;
 }
+
 tr.spacer {
 	height: 0.8em;
 }
+
 div.body {
 	padding: 0 10px;
 }
+
 li {
 	list-style-image: url(bullet.png);
 }
+
 dt {
 	font-weight: bold;
 }
@@ -46,10 +52,10 @@ form {
 	margin-top: 6px;
 }
 
-	form img {
-		vertical-align: bottom;
-		margin-left: 30px;
-	}
+form img {
+  vertical-align: bottom;
+  margin-left: 30px;
+}
 
 #canvas-div {
 	position: relative;
@@ -59,6 +65,7 @@ form {
 	height: 506px;
 	background-color: #7e7e7e;
 }
+
 input[type="range"] {
 	width: 80px;
 	vertical-align: bottom;

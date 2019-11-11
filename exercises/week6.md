@@ -14,12 +14,10 @@ The `Canvas` class contructor takes in a single parameter, `container`. Upon
 construction, the `Canvas` class should:
 
 *   Create a `canvasElement` variable using `document.createElement('canvas')`
-    *   **if** `canvasElement.getContext` **is equal to** `undefined`, `return`
-        from the constructor.
-    *   **else**, store the canvasElement as `this.obj`
-*   Store the width/height: `this.pixelWidth` and `this.pixelHeight.
-For now, the values assigned should be 803 (width) and 506 (height).
-    *   Append the canvasElement to the container, using `appendChild`
+*   store the canvasElement as `this.obj`
+*   Store the width/height: `this.pixelWidth` and `this.pixelHeight.  For now,
+    the values assigned should be 803 (width) and 506 (height).
+*   Append the canvasElement to the container, using `appendChild`
 *   Store the context: `this.ctx` (the canvas` 2d context) which should be set
     to the canvas' context, via `getContext('2d')`
 *   Call the class method `setGridSize` and pass in the argument `11`.
