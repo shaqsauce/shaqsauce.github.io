@@ -123,3 +123,10 @@ As a team, work to instantiate the appropriate objects (class instances).
 5.  Create an instance of `Controls`, which takes in the `Canvas` instance (Step
     2), `Shape` instance (Step 3), and `GameOfLife` instance (Step 4)
 
+## Challenge
+
+Given the instructions at [bitstorm.org](https://bitstorm.org/gameoflife/) start
+trying to implement the simulation. HINT: You'll want to enforce the rules in
+`GameOfLife.next()`. `Shape` will be responsible for storing information about the
+world. `Canvas` is responsible for drawing. `Controls` are responsible for user
+events such  as clicks.
