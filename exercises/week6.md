@@ -1,9 +1,27 @@
 # Week 6
 
-## Exercise 1: Set up class skeleton
+## Exercise 1: Set up class skeletons
 
 Your group should be assigned to a particular class. As a team, follow the
 instructions below for the class you're assigned to.
+
+### Create a gameoflife.js file
+
+First thing we'll need to do for Game of Life is to create a new `gameoflife.js`
+file. We'll add this file to the [game-of-life/](/game-of-life) folder. Then
+we'll load that file in our [index.html](/game-of-life/index.html) file.
+
+1.  Create a new file called `gameoflife.js` in [game-of-life/](/game-of-life)
+2.  Add `console.log('My new File!!!!!!!!!!');` to your new file
+3.  On a new line below line 23 and which should have `<\div>` create a new
+    script tag that points to your gameoflife.js file.
+
+    ```html
+    <script src="gameoflife.js"></script>
+    ```
+
+4.  Open [index.html](/game-of-life/index.html) in your browser and developer
+    tools then verify that 'My new File!!!!!!!!' is printed in the console.
 
 ### GameOfLife (demo'ed as a class)
 The `GameOfLife` class constructor takes in **no input parameters** and has no
