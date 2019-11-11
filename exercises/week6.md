@@ -5,6 +5,7 @@
 Your group should be assigned to a particular class. As a team, follow the
 instructions below for the class you're assigned to.
 
+
 ### Create a gameoflife.js file
 
 First thing we'll need to do for Game of Life is to create a new `gameoflife.js`
@@ -23,11 +24,13 @@ we'll load that file in our [index.html](/game-of-life/index.html) file.
 4.  Open [index.html](/game-of-life/index.html) in your browser and developer
     tools then verify that 'My new File!!!!!!!!' is printed in the console.
 
+
 ### GameOfLife (demo'ed as a class)
+
 The `GameOfLife` class constructor takes in **no input parameters** and has no
 construction logic (the constructor should be empty).
 
-### Canvas
+g## Canvas
 The `Canvas` class contructor takes in a single parameter, `container`. Upon
 construction, the `Canvas` class should:
 
