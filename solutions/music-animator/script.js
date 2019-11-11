@@ -29,27 +29,40 @@ class MyVisualizer extends AbstractVisualizer {
    * 2) Add the requestAnimationFrame loop which recursively calls
    * itself ("updateVisual") to repeatedly update the visual.
    */
-  updateVisual(index) {
-    index = index || 0;
+  updateVisual(peakIndex) {
+    peakIndex = peakIndex || 0;
 
-    if (index >= this.peaks.length) {
+    if (peakIndex >= this.peaks.length) {
         return;
     }
 
     const audioEl = document.querySelector('#audio');
 
-    if (true) {
+    if (audioEl.currentTime >= this.peaks[peakIndex].timeOfPeak){
+      this.drawShapes();
+
       requestAnimationFrame(() => {
-        this.updateVisual(index + 1)
+        this.updateVisual(peakIndex + 1)
       });
     } else {
       requestAnimationFrame(() => {
-        this.updateVisual(index)
+        this.updateVisual(peakIndex)
       });
     }
   }
 
   drawShapes() {
+    if(Math.random() >= 0.5) {
+      let point = generateRandomPoint();
+      let sideLength = generateRandomValue(50, 200);
+      let color = generateRandomColor();
+      this.drawSquare(point, sideLength, color);
+    } else {
+      let point = generateRandomPoint();
+      let radius = generateRandomValue(50, 200);
+      let color = generateRandomColor();
+      this.drawCircle(point, radius, color);
+    }
   }
 }
 
@@ -87,7 +100,10 @@ document.getElementById('playButton').addEventListener('click', (clickEvent) => 
           audioEl.src = previewUrl;
 
           requestAudio(previewUrl, (audio) => {
+            audioEl.play();
             const analyzedAudio = analyzeAudio(audio);
+            let visualizer = new MyVisualizer(analyzedAudio);
+            visualizer.startVisual();
           });
         } else {
           alert('This song does not have a preview');
