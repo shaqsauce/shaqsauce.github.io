@@ -14,8 +14,8 @@ we'll load that file in our [index.html](/game-of-life/index.html) file.
 
 1.  Create a new file called `gameoflife.js` in [game-of-life/](/game-of-life)
 2.  Add `console.log('My new File!!!!!!!!!!');` to your new file
-3.  On a new line below line 23 and which should have `<\div>` create a new
-    script tag that points to your gameoflife.js file.
+3.  On a new line below line 23 and `<\div>` create a new script tag that points
+    to your gameoflife.js file.
 
     ```html
     <script src="gameoflife.js"></script>
