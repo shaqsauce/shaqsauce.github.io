@@ -1,25 +1,45 @@
 # Week 6
 
-## Exercise 1: Set up class skeleton
+## Class Demo
+
+### Create a gameoflife.js file
+
+First thing we'll need to do for Game of Life is to create a new `gameoflife.js`
+file. We'll add this file to the [game-of-life/](/game-of-life) folder. Then
+we'll load that file in our [index.html](/game-of-life/index.html) file.
+
+1.  Create a new file called `gameoflife.js` in [game-of-life/](/game-of-life)
+2.  Add `console.log('My new File!!!!!!!!!!');` to your new file
+3.  On a new line below line 23 and `<\div>` create a new script tag that points
+    to your gameoflife.js file.
+
+    ```html
+    <script src="gameoflife.js"></script>
+    ```
+
+4.  Open [index.html](/game-of-life/index.html) in your browser and developer
+    tools then verify that 'My new File!!!!!!!!' is printed in the console.
+
+### GameOfLife
+
+The `GameOfLife` class constructor takes in **no input parameters** and has no
+construction logic (the constructor should be empty).
+
+## Exercise 1: Set up class skeletons
 
 Your group should be assigned to a particular class. As a team, follow the
 instructions below for the class you're assigned to.
 
-### GameOfLife [demo](https://bitstorm.org/gameoflife/)
-The `GameOfLife` class constructor takes in **no input parameters** and has no
-construction logic (the constructor should be empty).
-
 ### Canvas
+
 The `Canvas` class contructor takes in a single parameter, `container`. Upon
 construction, the `Canvas` class should:
 
 *   Create a `canvasElement` variable using `document.createElement('canvas')`
-    *   **if** `canvasElement.getContext` **is equal to** `undefined`, `return`
-        from the constructor.
-    *   **else**, store the canvasElement as `this.obj`
-*   Store the width/height: `this.pixelWidth` and `this.pixelHeight.
-For now, the values assigned should be 803 (width) and 506 (height).
-    *   Append the canvasElement to the container, using `appendChild`
+*   store the canvasElement as `this.obj`
+*   Store the width/height: `this.pixelWidth` and `this.pixelHeight.  For now,
+    the values assigned should be 803 (width) and 506 (height).
+*   Append the canvasElement to the container, using `appendChild`
 *   Store the context: `this.ctx` (the canvas` 2d context) which should be set
     to the canvas' context, via `getContext('2d')`
 *   Call the class method `setGridSize` and pass in the argument `11`.
@@ -104,3 +124,10 @@ As a team, work to instantiate the appropriate objects (class instances).
 5.  Create an instance of `Controls`, which takes in the `Canvas` instance (Step
     2), `Shape` instance (Step 3), and `GameOfLife` instance (Step 4)
 
+## Challenge
+
+Given the instructions at [bitstorm.org](https://bitstorm.org/gameoflife/) start
+trying to implement the simulation. HINT: You'll want to enforce the rules in
+`GameOfLife.next()`. `Shape` will be responsible for storing information about the
+world. `Canvas` is responsible for drawing. `Controls` are responsible for user
+events such  as clicks.
