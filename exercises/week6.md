@@ -119,8 +119,7 @@ As a team, work to instantiate the appropriate objects (class instances).
 2.  Create an instance of `Canvas`, which takes in the `canvasElement` (from Step 1)
 3.  Create an instance of `Shape`, which takes in the `Canvas` instance created
     in Step 2
-4.  Create an instance of `GameOfLife`, which takes in the `Canvas` instance
-    created in Step 2
+4.  Create an instance of `GameOfLife`, which takes in no input parameters.
 5.  Create an instance of `Controls`, which takes in the `Canvas` instance (Step
     2), `Shape` instance (Step 3), and `GameOfLife` instance (Step 4)
 
