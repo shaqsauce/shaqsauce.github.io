@@ -41,7 +41,13 @@ git push
 1.  Commit all your local changes by following the instruction in *Saving changes to GitHub* above
 2.  `git remote add upstream https://github.com/jamieyu96/jamieyu96.github.io.git`
 3.  `git fetch upstream`
-4.  `git merge upstreatm/master`
+4.  `git merge upstream/master`
+
+## Merging remote changes
+To merge remote changes you'll first need to add a remote branch. See the instruction above
+
+1.  `git fetch upstream`
+2.  `git merge upstream/master`
 
 ## git commands
 All git commands must be done from inside of your project folder
@@ -67,4 +73,12 @@ press enter.
 *  `pwd` - Prints out the full file path that you're currently in.
 
 # Excercies
-* [Week 3](exercises/week3.md)
+* [Week 3](/exercises/week3.md)
+* [Week 4](/exercises/week4.md)
+* [week 5](/exercises/week5.md)
+* [week 6](/exercises/week6.md)
+
+# Other links
+* [Slide deck](https://docs.google.com/presentation/d/15rT3DGiQTCAWaJULosnOFOMp0r36O1FfkeS_KMdputo/edit#slide=id.p)
+* [Gmae of Life demo](https://bitstorm.org/gameoflife/)
+

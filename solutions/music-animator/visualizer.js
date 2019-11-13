@@ -16,35 +16,53 @@ class AbstractVisualizer {
     this.drawBackground(this.canvas, {width: CANVAS_WIDTH, height: CANVAS_HEIGHT});
   }
 
-  drawRectangle(point1, point2, point3, point4, rectangleProperties = {}) {
+  drawRectangle(point1, point2, point3, point4, rectangleProperties) {
     const context = this.canvas.getContext("2d");
-    context.lineWidth = rectangleProperties.width || 5;
-    context.strokeStyle = rectangleProperties.color || '#FF00000';
-
+    context.fillStyle = rectangleProperties.color;
     context.moveTo(point1.x, point1.y);
+    context.beginPath();
     context.lineTo(point2.x, point2.y);
     context.lineTo(point3.x, point3.y);
     context.lineTo(point4.x, point4.y);
     context.lineTo(point1.x, point1.y);
-    context.closePath();
     context.fill();
+    context.strokeStyle = rectangleProperties.color;
+    context.stroke();
   }
 
-  drawSquare(startingPoint, sideLength, squareProperties) {
-    const context = this.canvas.getContext("2d");
-    context.moveTo(point1.x, point1.y);
+  drawSquare(point, sideLength, color) {
+    const point1 = {
+      x: point.x,
+      y: point.y,
+    }
+    const point2 = {
+      x: point.x + sideLength,
+      y: point.y,
+    };
+    const point3 = {
+      x: point.x + sideLength,
+      y: point.y + sideLength,
+    };
+    const point4 = {
+      x: point.x,
+      y: point.y + sideLength,
+    };
+    this.drawRectangle(
+      point1,
+      point2,
+      point3,
+      point4,
+      {color: color})
+  }
+
+  drawCircle(centerPoint, radius, color) {
+    const context = canvas.getContext("2d");
     context.beginPath();
-    context.lineTo(startingPoint.x+sideLength, startingPoint.y);
-    context.lineTo(startingPoint.x+sideLength, startingPoint.y+sideLength);
-    context.lineTo(startingPoint.x, startingPoint.y+sidelength);
-    
-    // TODO(week 3): Implement.
-  }
-
-  drawCircle() {
-    // TODO(week 3): Implement.
-    // See here for more information:
-    // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc
+    context.arc(centerPoint.x, centerPoint.y, radius, 0, 2 * Math.PI);
+    context.fillStyle = color;
+    context.fill();
+    context.strokeStyle = color;
+    context.stroke();
   }
 
   drawBackground(canvas, canvasDimensions, color = BACKGROUND_COLOR) {
@@ -55,7 +73,6 @@ class AbstractVisualizer {
     context.fillRect(0, 0, canvasDimensions.width, canvasDimensions.height);
   }
 }
-
 
 /**
  * Generates a hexadecimal random color.
@@ -75,12 +92,8 @@ function generateRandomValue(minValue = 1, maxValue = 10) {
 }
 
 function generateRandomPoint() {
-  // TODO:
-  // Use generateRandomValue to create a ranom x and a random y value.
-  // HINT: we can use the constants CANVAS_HEIGHT and CANVAS_WIDTH for the max
-  //     x and y values.
   return {
-    x: 0,
-    y: 0,
+    x: generateRandomValue(0, CANVAS_WIDTH),
+    y: generateRandomValue(0, CANVAS_HEIGHT),
   };
 }
