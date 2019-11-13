@@ -40,7 +40,7 @@ construction, the `Canvas` class should:
 *   Store the width/height: `this.pixelWidth` and `this.pixelHeight.  For now,
     the values assigned should be 803 (width) and 506 (height).
 *   Append the canvasElement to the container, using `appendChild`
-*   Store the context: `this.ctx` (the canvas` 2d context) which should be set
+*   Store the context: `this.ctx` (the canvas 2d context) which should be set
     to the canvas' context, via `getContext('2d')`
 *   Call the class method `setGridSize` and pass in the argument `11`.
 
