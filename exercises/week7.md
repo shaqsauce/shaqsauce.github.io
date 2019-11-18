@@ -22,10 +22,10 @@ we'll want to draw vertical lines in `this.ctx` from `(index + 0.5, 0)` to
 `(index + 0.5, this.pixelHeight).` To do this you'll need to use 4 methods on
 `this.ctx`:
 
-* `beginPath()` - starts the path (documentation)[https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/beginPath]
-* `lineTo(x, y)` - draws a line to a point (documentation)(https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineTo)
-* `moveTo(x, y)` - moves to a start point (documentation)(https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/moveTo)
-* `stroke()` - finishes a line (documentation)[https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/stroke]
+* `beginPath()` - starts the path [documentation](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/beginPath)
+* `lineTo(x, y)` - draws a line to a point [documentation](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineTo)
+* `moveTo(x, y)` - moves to a start point [documentation](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/moveTo)
+* `stroke()` - finishes a line [documentation](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/stroke)
 
 Now once you've draw the vertical lines, you'll need to do the same thing for
 the horizontal.
@@ -81,3 +81,10 @@ At the bottom of `Canvas.draw` we'll need to set the `fillStyle` of our context
 object to `'yellow'`. Then use `fillRect` for every cell in cells to draw a square
 given the cells first and second index values, which represent x and y.
 [fillRect documentation](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillRect)
+
+
+## Challenge
+
+If you can add yellow square to the board by pushing them on to `this.current`
+how would you remove yellow squares? Use the answer to this question to implement
+finish `toggle`.
