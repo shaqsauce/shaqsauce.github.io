@@ -33,7 +33,7 @@ the horizontal.
 HINT: horizontal lines are vertical lines where x and y have been swapped.
 
 
-# Exercise 2: Click handler
+## Exercise 2: Click handler
 
 In `Controls.init(shapes)` add:
 
@@ -55,7 +55,29 @@ object with a `left` and `top` property that represent the x cordinate and y cor
 of the left and top of the object. The final thing you'll need is `Math.floor`
 will truncate to the next integer value.
 
+Once you've calculated your values call the `fn` function with clickEvent as the
+only argument.
+
 To test your solution use `console.log` or the Chrome debugger.
 
 HINT: This part is a visual math problem so try getting some paper and drawing it
 out.
+
+
+
+## Exercise 3: Yellow squares
+
+Inside the click function your call back function in `Control.init` call
+toggle with an array where the first value is `event.cellX` and the second value
+is `event.cellY`.
+
+`toggle` should push `cell` onto `this.current` by calling `this.current.push(cell)`
+
+`toggle` should then call it's `redraw()` method.
+
+In `Toggle.rdeaw` we'll want to call `this.canvas.draw(this.current)`.
+
+At the bottom of `Canvas.draw` we'll need to set the `fillStyle` of our context
+object to `'yellow'`. Then use `fillRect` for every cell in cells to draw a square
+given the cells first and second index values, which represent x and y.
+[fillRect documentation](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillRect)
