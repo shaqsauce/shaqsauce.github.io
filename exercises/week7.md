@@ -72,17 +72,16 @@ draw it out.
 
 Inside the `click`'s [callback function](#exercise-2-click-handler) (from Exercise 2):
 *  Call toggle with an array where the first value is `event.cellX` and the second value is `event.cellY`.
-   *  `toggle` should push `cell` onto `this.current` by calling `this.current.push(cell)`
-   *  `toggle` should then call it's `redraw()` method.
+  *  `toggle` should push `cell` onto `this.current` by calling `this.current.push(cell)` 
+     *  [push documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+  *  `toggle` should then call it's `redraw()` method.
 
 *  Implement `Toggle.redraw` by calling `this.canvas.draw(this.current)`
 
 At the bottom of `Canvas.draw`:
 *  Set the `fillStyle` of our context object to `'yellow'`
 *  Use `fillRect` for every cell in cells to draw a square given the cells first and second index values, which represent X and Y
-
-*  [fillRect documentation](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillRect)
-*  [push documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+   *  [fillRect documentation](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillRect)
 
 
 
