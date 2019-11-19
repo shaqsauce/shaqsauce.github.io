@@ -25,7 +25,7 @@ We're going to put our draw logic in `Canvas`'s `draw(cells)` method.
 `(index + 0.5, this.pixelHeight)`
       *  In the loop you can use a combination of these 4 methods on `this.ctx` to draw vertical lines:
 
-         * `beginPath()` - starts the path (documentation)[https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/beginPath]
+         * `beginPath()` - starts the path [documentation](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/beginPath)
          * `lineTo(x, y)` - draws a line to a point [documentation](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineTo)
          * `moveTo(x, y)` - moves to a start point [documentation](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/moveTo)
          * `stroke()` - finishes a line [documentation](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/stroke)
