@@ -20,45 +20,45 @@ class Canvas {
   }
 
   draw(cells) {
-		this.ctx.fillStyle = "#7e7e7e";
-		this.ctx.lineWidth = 1;
-		this.ctx.fillRect (0, 0, this.pixelWidth, this.pixelHeight);
-		this.ctx.strokeStyle = "#999";
+    this.ctx.fillStyle = "#7e7e7e";
+    this.ctx.lineWidth = 1;
+    this.ctx.fillRect (0, 0, this.pixelWidth, this.pixelHeight);
+    this.ctx.strokeStyle = "#999";
 
-		for(let n = this.cellSize; n < this.pixelWidth; n += this.cellSize) {
-			this.ctx.beginPath();
-			this.ctx.moveTo(n + 0.5, 0);
-			this.ctx.lineTo(n + 0.5, this.pixelHeight);
-			this.ctx.stroke();
-		}
-		for(let n = this.cellSize; n < this.pixelHeight; n += this.cellSize) {
-			this.ctx.beginPath();
-			this.ctx.moveTo(0, n + 0.5);
-			this.ctx.lineTo(this.pixelWidth, n + 0.5);
-			this.ctx.stroke();
-		}
+    for(let n = this.cellSize; n < this.pixelWidth; n += this.cellSize) {
+      this.ctx.beginPath();
+      this.ctx.moveTo(n + 0.5, 0);
+      this.ctx.lineTo(n + 0.5, this.pixelHeight);
+      this.ctx.stroke();
+    }
+    for(let n = this.cellSize; n < this.pixelHeight; n += this.cellSize) {
+      this.ctx.beginPath();
+      this.ctx.moveTo(0, n + 0.5);
+      this.ctx.lineTo(this.pixelWidth, n + 0.5);
+      this.ctx.stroke();
+    }
 
-		this.ctx.fillStyle = "yellow";
-		this.ctx.lineWidth = 1;
-		cells.forEach((cell, i) => {
+    this.ctx.fillStyle = "yellow";
+    this.ctx.lineWidth = 1;
+    cells.forEach((cell, i) => {
       this.ctx.fillRect(
         cell[0] * this.cellSize + 1,
         cell[1] * this.cellSize + 1,
         this.cellSize - 1,
         this.cellSize - 1);
-		});
+    });
   }
 
   click(fn) {
     this.obj.addEventListener('click', (evt) => {
-			let rect = canvas.obj.getBoundingClientRect();
-			let left = Math.floor(rect.left + window.pageXOffset);
-			let top = Math.floor(rect.top + window.pageYOffset);
-			let cellSize = canvas.cellSize;
-			let clickEvent = {};
-			clickEvent.cellX = Math.floor((evt.clientX - left + window.pageXOffset) / cellSize);
-			clickEvent.cellY = Math.floor((evt.clientY - top + window.pageYOffset - 5) / cellSize);
-			fn(clickEvent);
+      let rect = canvas.obj.getBoundingClientRect();
+      let left = Math.floor(rect.left + window.pageXOffset);
+      let top = Math.floor(rect.top + window.pageYOffset);
+      let cellSize = canvas.cellSize;
+      let clickEvent = {};
+      clickEvent.cellX = Math.floor((evt.clientX - left + window.pageXOffset) / cellSize);
+      clickEvent.cellY = Math.floor((evt.clientY - top + window.pageYOffset - 5) / cellSize);
+      fn(clickEvent);
     });
   }
 
@@ -81,7 +81,7 @@ class Shape {
   }
 
   get() {
-		return this.current;
+    return this.current;
   }
 
   set(shape)  {
@@ -92,7 +92,7 @@ class Shape {
   }
 
   redraw() {
-		this.canvas.draw(this.current);
+    this.canvas.draw(this.current);
   }
 
   center() {
@@ -101,10 +101,10 @@ class Shape {
   offset(dx, dy) {
   }
 
-	toggle(cell) {
+  toggle(cell) {
     this.current.push(cell);
-		this.redraw();
-	}
+    this.redraw();
+  }
 }
 
 class Controls {
@@ -116,9 +116,9 @@ class Controls {
   }
 
   init(shapes) {
-		this.canvas.click((evt) => {
-			this.shape.toggle([evt.cellX, evt.cellY]);
-		});
+    this.canvas.click((evt) => {
+      this.shape.toggle([evt.cellX, evt.cellY]);
+    });
   }
 
   setGeneration(gen) {
