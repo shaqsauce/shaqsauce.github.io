@@ -30,6 +30,7 @@ class Canvas {
   }
 
   setGridSize(size) {
+    this.cellSize = size;
   }
 }
 
