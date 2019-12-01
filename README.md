@@ -81,5 +81,5 @@ press enter.
 
 # Other links
 * [Slide deck](https://docs.google.com/presentation/d/15rT3DGiQTCAWaJULosnOFOMp0r36O1FfkeS_KMdputo/edit#slide=id.p)
-* [Gmae of Life demo](https://bitstorm.org/gameoflife/)
+* [Game of Life demo](https://bitstorm.org/gameoflife/)
 
