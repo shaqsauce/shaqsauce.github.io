@@ -51,7 +51,7 @@ To complete this part you'll need to:
 *  Once you have the neighbour data defined loop through the shape and set the
    populated fields to true for all the cells with a neighbour entry.
 
-### Part 3: Enforce rules
+### Part 2: Enforce rules
 
 *  Now that you have all the neighbour data create a new array called `newShape`
 *  loop through the neighbors and add cell the cell value on neighbour to `newShape`
