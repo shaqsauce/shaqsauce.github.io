@@ -59,7 +59,8 @@ You can also make updates to your music player from week 2 - week 6
 ### Update your website
 
 Don't forget that this whole repo is hosted at `https://<your-username>.github.io`
-Make some updates to the [index.html](/index.html) file.
+Make some updates to the [index.html](/index.html) file. One idea would be to browse
+[codepen.io](https://codepen.io) for something cool and try adding it to your site.
 
 
 ### Other
