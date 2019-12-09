@@ -48,7 +48,7 @@ and update [style.css](/game-of-life/style.css).
 #### Challenge
 
 Use [CSS Animations](https://www.w3schools.com/css/css3_animations.asp) to animate
-the next button when you click or anything else.
+the next button. Try making the next button spin 360 degrees on a click.
 
 
 ### Update your music player
