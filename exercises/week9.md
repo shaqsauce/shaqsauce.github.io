@@ -39,7 +39,7 @@ property we can change the size of each square. Add a [range slider](https://www
 to allow the user to choose their own grid size.
 
 
-### ~COLORS!!!!!!~
+### ***COLORS!!!!!!***
 
 Right now the grid is very grey... Use your own `fillStyle` and `strokStyle` colors
 and update [style.css](/game-of-life/style.css).
