@@ -78,6 +78,7 @@ press enter.
 * [week 5](/exercises/week5.md)
 * [week 6](/exercises/week6.md)
 * [week 7](/exercises/week7.md)
+* [week 8](/exercises/week8.md)
 
 # Other links
 * [Slide deck](https://docs.google.com/presentation/d/15rT3DGiQTCAWaJULosnOFOMp0r36O1FfkeS_KMdputo/edit#slide=id.p)
