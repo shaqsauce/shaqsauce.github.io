@@ -7,81 +7,10 @@ class GameOfLife {
 
     for(let i = 0; i < shape.length; i++) {
       let cell = shape[i];
-      let key;
 
-      key = 'c'+(cell[0]-1)+','+(cell[1]-1);
-			if (neighbours[key]) {
-				neighbours[key].n++;
-			} else {
-				neighbours[key] = {n: 1, cell: [cell[0]-1, cell[1]-1]};
-			}
 
-			key = 'c'+(cell[0])+','+(cell[1]-1);
-			if (neighbours[key]) {
-				neighbours[key].n++;
-			} else {
-				neighbours[key] = {n: 1, cell: [cell[0], cell[1]-1]};
-			}
+    }
 
-			key = 'c'+(cell[0]+1)+','+(cell[1]-1);
-			if (neighbours[key]) {
-				neighbours[key].n++;
-			} else {
-				neighbours[key] = {n: 1, cell: [cell[0]+1, cell[1]-1]};
-			}
-
-			key = 'c'+(cell[0]-1)+','+(cell[1]);
-			if (neighbours[key]) {
-				neighbours[key].n++;
-			} else {
-				neighbours[key] = {n: 1, cell: [cell[0]-1, cell[1]]};
-			}
-
-			key = 'c'+(cell[0]+1)+','+(cell[1]);
-			if (neighbours[key]) {
-				neighbours[key].n++;
-			} else {
-				neighbours[key] = {n: 1, cell: [cell[0]+1, cell[1]]};
-			}
-
-			key = 'c'+(cell[0]-1)+','+(cell[1]+1);
-			if (neighbours[key]) {
-				neighbours[key].n++;
-			} else {
-				neighbours[key] = {n: 1, cell: [cell[0]-1, cell[1]+1]};
-			}
-
-			key = 'c'+(cell[0])+','+(cell[1]+1);
-			if (neighbours[key]) {
-				neighbours[key].n++;
-			} else {
-				neighbours[key] = {n: 1, cell: [cell[0], cell[1]+1]};
-			}
-
-			key = 'c'+(cell[0]+1)+','+(cell[1]+1);
-			if (neighbours[key]) {
-				neighbours[key].n++;
-			} else {
-				neighbours[key] = {n: 1, cell: [cell[0]+1, cell[1]+1]};
-			}
-		}
-
-    for(let i = 0; i < shape.length; i++) {
-      let cell = shape[i];
-			let key = 'c' + cell[0] + ',' + cell[1];
-			if (neighbours[key]) {
-				neighbours[key].populated = true;
-			}
-		};
-
-		let newShape = [];
-		for (let key in neighbours) {
-			if ((neighbours[key].n == 2 && neighbours[key].populated) || neighbours[key].n == 3) {
-				newShape.push(neighbours[key].cell);
-			}
-		}
-
-		return newShape;
   }
 }
 
